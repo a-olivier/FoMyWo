@@ -1,11 +1,11 @@
 package com.fomywo.tools;
 
-import com.fomywo.wordAction.description.FomywoTransformation;
+import com.fomywo.wordAction.description.IFomywoTransformation;
 
 public class ReturnContainer<T> {
 
 	private Object returnContent;
-	private FomywoTransformation<T> transformation;
+	private IFomywoTransformation<T> transformation;
 	private ReturnContainer<T> next;
 	private ReturnContainer<T> previous;
 	private String order; 
@@ -67,7 +67,7 @@ public class ReturnContainer<T> {
 		return scannedRC;
 	}
 
-	protected String showTransformationChain() {
+	public String showTransformationChain() {
 		String chain = "";
 		chain = transformation.getClass().getName() + " ";
 		if (!this.isLast()) {
@@ -76,7 +76,7 @@ public class ReturnContainer<T> {
 		return chain;
 	}
 
-	public void add(FomywoTransformation<T> transformation) {
+	public void add(IFomywoTransformation<T> transformation) {
 		if (this.isLast()) {
 			this.transformation = transformation;
 		} else {

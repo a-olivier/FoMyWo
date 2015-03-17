@@ -4,10 +4,10 @@ import org.joda.time.DateTime;
 
 import com.fomywo.annotation.fomywoTransformation;
 import com.fomywo.tools.ReturnContainer;
-import com.fomywo.wordAction.description.FomywoTransformation;
+import com.fomywo.wordAction.description.IFomywoTransformation;
 
 @fomywoTransformation
-public class DateType  implements FomywoTransformation<DateTime> {
+public class DateType  implements IFomywoTransformation<DateTime> {
 
 
 	public DateTime action (String command)
